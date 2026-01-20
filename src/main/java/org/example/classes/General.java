@@ -1,4 +1,4 @@
-package classes;
+package org.example.classes;
 
 public class General
 {

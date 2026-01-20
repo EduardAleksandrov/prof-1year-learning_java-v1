@@ -1,8 +1,10 @@
 package org.example;
 
-import classes.General;
+import org.example.classes.General;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
+import java.math.BigDecimal;
 import java.util.concurrent.CompletableFuture;
 
 
@@ -45,7 +47,7 @@ public class Main {
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             // Simulated long-running task
             try {
-                Thread.sleep(2000);
+                Thread.sleep(5000);
                 System.out.println("Task completed!");
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -66,6 +68,11 @@ public class Main {
         General gn = new General("Hello");
         IO.println(gn.str);
 
+        BigDecimal decimal = new BigDecimal("123.22");
+
+        String s = "hi";
+        s = "try";
+        IO.println(s);
     }
     static void calculate(Integer @NotNull [] xx)
     {
