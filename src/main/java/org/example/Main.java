@@ -1,5 +1,6 @@
 package org.example;
 
+import classes.General;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 import java.util.concurrent.CompletableFuture;
@@ -61,9 +62,14 @@ public class Main {
         Integer @NotNull [] xx = {5};
         calculate(xx);
         IO.println(xx[0]);
+
+        General gn = new General("Hello");
+        IO.println(gn.str);
+
     }
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
+
     }
 }
