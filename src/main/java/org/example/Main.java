@@ -73,10 +73,51 @@ public class Main {
         String s = "hi";
         s = "try";
         IO.println(s);
+
+        // Объявление и инициализация двумерного массива
+        int[][] array = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
+        // Вывод значений массива на экран
+        for(int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println(); // Переход на новую строку
+        }
+        for (int[] ints : array) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
+            }
+            System.out.println(); // Переход на новую строку
+        }
+
+        int n = 1;
+        boolean nn = true;
+        if(n==1) System.out.println("True");
+        if(nn) System.out.println("True");
+
+        IO.println(sum(5));
     }
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
 
+    }
+
+    /**
+     * @param n
+     * @return
+     */
+    static int sum(int n)
+    {
+        int total = 0;
+        for(int i = 0; i < n; i++)
+        {
+            total +=i;
+        }
+        return total;
     }
 }
