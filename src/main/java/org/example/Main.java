@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.classes.General;
 
+import org.example.classes.RefGeneric;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 import java.math.BigDecimal;
@@ -100,16 +101,31 @@ public class Main {
         if(nn) System.out.println("True");
 
         IO.println(sum(5));
+
+        // Ref Generic
+        int r = 5;
+        RefGeneric<Integer> reg = new RefGeneric<Integer>(r);
+        ref(reg);
+        r = reg.value;
+        System.out.print("Ref ссылка в функцию: ");
+        IO.println(r);
     }
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
-
     }
 
     /**
-     * @param n
-     * @return
+     * @param r - primitive by reference
+     */
+    static void ref(@NotNull RefGeneric<Integer> r)
+    {
+        r.value = 6;
+    }
+
+    /**
+     * @param n - value for function
+     * @return - total sum
      */
     static int sum(int n)
     {
