@@ -1,4 +1,4 @@
-package org.example.classes;
+package org.example.classes.ref;
 
 public class RefGeneric<T> {
     public T value;

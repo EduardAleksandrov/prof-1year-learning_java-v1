@@ -2,9 +2,11 @@ package org.example;
 
 import org.example.classes.General;
 
-import org.example.classes.RefGeneric;
+import org.example.classes.ref.RefGeneric;
+import org.example.classes.ref.RefTask;
 import org.example.threads.one.OneTask;
 
+import org.example.threads.two.TwoTask;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 import java.math.BigDecimal;
@@ -23,7 +25,7 @@ public class Main {
 // 3 Threads
         thread1();
         thread2();
-// 4 Calculate
+// 4 Calculate general
         function1();
     }
 // 1
@@ -48,25 +50,12 @@ public class Main {
 // 3.1
     static void thread1()
     {
-        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
-            // Simulated long-running task
-            try {
-                Thread.sleep(5000);
-                System.out.println("Task completed!");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-        System.out.println("Wait");
-        // Wait for the task to complete (optional)
-        future.join();
-        System.out.println("Main thread finished.");
+        OneTask.run();
     }
 
     static void thread2()
     {
-        OneTask t = new OneTask();
-        t.run();
+        TwoTask.call();
     }
 // 4
     static void function1()
@@ -111,25 +100,11 @@ public class Main {
 
         IO.println(sum(5));
 
-        // Ref Generic
-        int r = 5;
-        RefGeneric<Integer> reg = new RefGeneric<Integer>(r);
-        ref(reg);
-        r = reg.value;
-        System.out.print("Ref ссылка в функцию: ");
-        IO.println(r);
+        RefTask.run();
     }
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
-    }
-
-    /**
-     * @param r - primitive by reference
-     */
-    static void ref(@NotNull RefGeneric<Integer> r)
-    {
-        r.value = 6;
     }
 
     /**
