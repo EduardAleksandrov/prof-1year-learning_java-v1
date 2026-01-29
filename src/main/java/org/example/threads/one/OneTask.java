@@ -1,6 +1,6 @@
 package org.example.threads.one;
 
-import org.example.threads.one.OneCounter;
+import java.util.stream.IntStream;
 
 public class OneTask {
 
@@ -27,6 +27,11 @@ public class OneTask {
             Thread.currentThread().interrupt(); // Хорошая практика — восстановить статус прерывания
         }
 
+        System.out.println("Итог: " + counter.getCount()); // Всегда 2000
+
+        IntStream.range(0, 1000)
+                .parallel() // This is your "#pragma omp parallel"
+                .forEach(i -> counter.increment());
         System.out.println("Итог: " + counter.getCount()); // Всегда 2000
 
     }
