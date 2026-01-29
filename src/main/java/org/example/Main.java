@@ -3,6 +3,8 @@ package org.example;
 import org.example.classes.General;
 
 import org.example.classes.RefGeneric;
+import org.example.threads.one.OneTask;
+
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONObject;
 import java.math.BigDecimal;
@@ -20,6 +22,7 @@ public class Main {
         JSON();
 // 3 Threads
         thread1();
+        thread2();
 // 4 Calculate
         function1();
     }
@@ -58,6 +61,12 @@ public class Main {
         // Wait for the task to complete (optional)
         future.join();
         System.out.println("Main thread finished.");
+    }
+
+    static void thread2()
+    {
+        OneTask t = new OneTask();
+        t.run();
     }
 // 4
     static void function1()
