@@ -1,16 +1,12 @@
 package org.example;
 
 import org.example.classes.General;
-
-import org.example.classes.ref.RefGeneric;
 import org.example.classes.ref.RefTask;
 import org.example.threads.one.OneTask;
-
 import org.example.threads.two.TwoTask;
+
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONObject;
 import java.math.BigDecimal;
-import java.util.concurrent.CompletableFuture;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -18,36 +14,15 @@ import java.util.concurrent.CompletableFuture;
 public class Main {
     static void main()
     {
-// 1 Println
-        pr();
-// 2 JSON
-        JSON();
-// 3 Threads
+// 1 Threads
         thread1();
         thread2();
-// 4 Calculate general
+// 2 Calculate general
         function1();
+        RefTask.run();
     }
-// 1
-    static void pr()
-    {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
-    }
-// 2
-     static void JSON()
-    {
-        JSONObject jo = new JSONObject("{ \"abc\" : \"def\" }");
-        System.out.println(jo);
-    }
-// 3.1
+// 1
     static void thread1()
     {
         OneTask.run();
@@ -57,7 +32,7 @@ public class Main {
     {
         TwoTask.call();
     }
-// 4
+// 2
     static void function1()
     {
         Integer @NotNull [] xx = {5};
@@ -66,6 +41,8 @@ public class Main {
 
         General gn = new General("Hello");
         IO.println(gn.str);
+        General.pr();
+        General.JSON();
 
         BigDecimal decimal = new BigDecimal("123.22");
 
@@ -97,27 +74,14 @@ public class Main {
         boolean nn = true;
         if(n==1) System.out.println("True");
         if(nn) System.out.println("True");
-
-        IO.println(sum(5));
-
-        RefTask.run();
     }
+
+    /**
+     * @param xx - массив
+     */
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
     }
 
-    /**
-     * @param n - value for function
-     * @return - total sum
-     */
-    static int sum(int n)
-    {
-        int total = 0;
-        for(int i = 0; i < n; i++)
-        {
-            total +=i;
-        }
-        return total;
-    }
 }
