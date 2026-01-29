@@ -3,6 +3,7 @@ package org.example;
 import org.example.classes.General;
 import org.example.classes.ref.RefTask;
 import org.example.threads.one.OneTask;
+import org.example.threads.three.ThreeTask;
 import org.example.threads.two.TwoTask;
 
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +18,7 @@ public class Main {
 // 1 Threads
         thread1();
         thread2();
+        thread3();
 // 2 Calculate general
         function1();
         RefTask.run();
@@ -31,6 +33,11 @@ public class Main {
     static void thread2()
     {
         TwoTask.call();
+    }
+
+    static void thread3()
+    {
+        ThreeTask.projectLoom();
     }
 // 2
     static void function1()
