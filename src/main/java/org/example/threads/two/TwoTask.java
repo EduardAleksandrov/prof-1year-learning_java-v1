@@ -17,12 +17,12 @@ public class TwoTask {
         System.out.println("Wait");
         // Wait for the task to complete (optional)
         future.join();
-        System.out.println("Main thread finished.");
+        System.out.println("Main thread finished. \n");
 
 
         CompletableFuture.supplyAsync(() -> "Данные из сети")
                 .thenApply(data -> data + " обработаны")
                 .thenAccept(System.out::println);
-        System.out.println("CompletableFuture thread finished.");
+        System.out.println("CompletableFuture thread finished.\n");
     }
 }

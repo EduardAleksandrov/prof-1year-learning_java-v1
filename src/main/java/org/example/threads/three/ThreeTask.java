@@ -16,7 +16,7 @@ public class ThreeTask {
                 executor.submit(() -> {
                     // Имитируем тяжелую работу (например, запрос в БД)
                     Thread.sleep(Duration.ofSeconds(1));
-                    if(taskId % 10000 == 0) System.out.println("Задача " + taskId + " выполнена потоком: " + Thread.currentThread());
+                    if(taskId % 10_000 == 0) System.out.println("Задача " + taskId + " выполнена потоком: " + Thread.currentThread());
                     return taskId;
                 });
             }

@@ -10,8 +10,8 @@ public class RefTask {
         RefGeneric<Integer> reg = new RefGeneric<Integer>(r);
         ref(reg);
         r = reg.value;
-        System.out.print("Ref ссылка в функцию: ");
-        IO.println(r);
+        System.out.print("\nRef ссылка в функцию: ");
+        IO.println(r + '\n');
     }
     static void ref(@NotNull RefGeneric<Integer> r)
     {

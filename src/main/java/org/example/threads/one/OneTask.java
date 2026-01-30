@@ -32,7 +32,7 @@ public class OneTask {
         IntStream.range(0, 1000)
                 .parallel() // This is your "#pragma omp parallel"
                 .forEach(i -> counter.increment());
-        System.out.println("Итог: " + counter.getCount()); // Всегда 2000
+        System.out.println("Итог: " + counter.getCount() + '\n'); // Всегда 2000
 
     }
 
