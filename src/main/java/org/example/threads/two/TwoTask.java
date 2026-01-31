@@ -8,7 +8,7 @@ public class TwoTask {
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             // Simulated long-running task
             try {
-                Thread.sleep(5000);
+                Thread.sleep(3000);
                 System.out.println("Task completed!");
             } catch (InterruptedException e) {
                 e.printStackTrace();

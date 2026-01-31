@@ -10,6 +10,7 @@ import org.example.threads.four.SumTask;
 import org.jetbrains.annotations.NotNull;
 import java.math.BigDecimal;
 import java.util.concurrent.ForkJoinPool;
+import java.util.Scanner;
 
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -25,6 +26,8 @@ public class Main {
 // 2 Calculate general
         function1();
         RefTask.run();
+// 3 Book Schildt
+        function2();
     }
 
 // 1
@@ -93,22 +96,69 @@ public class Main {
             }
             System.out.println(); // Переход на новую строку
         }
-
-        int n = 1;
-        boolean nn = true;
-        if(n==1) System.out.println("True");
-        if(nn) System.out.println("True");
-
-        float ff = 0.95f;
-        System.out.println(ff);
     }
-
     /**
      * @param xx - массив
      */
     static void calculate(Integer @NotNull [] xx)
     {
         xx[0] = 6;
+    }
+// 3
+    // Book Schildt
+    static void function2()
+    {
+        // Глава 2
+        int n = 1;
+        boolean nn = true;
+        if(n==1) System.out.println("\nTrue");
+        if(nn) System.out.println("True\n");
+
+        float ff = 0.95f;
+        System.out.println(ff);
+        // ---
+
+        // Глава 3
+        double dd = 1/2;
+        System.out.println(dd);
+
+        int[] arr1 = new int[12];
+        int[] arr2 = {0, 1, 2};
+        n++;
+        ++n;
+        var arr3 = new double[][] { {1.0, 2.0},{2.0, 3.0} };
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0; j < 2; j++)
+            {
+                System.out.print(arr3[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int input;
+        int[] arr4 = null;
+        try(Scanner scanner = new Scanner(System.in)) {// Создаем объект Scanner для считывания ввода
+            System.out.println("Введите число:"); // Просим пользователя ввести строку
+            input = scanner.nextInt();
+            if(input < 1) throw new Throwable("Less zero");
+            System.out.println("Число " + input);
+            arr4 = new int[input];
+        } catch(Throwable t) {
+            System.out.println(t.getMessage());
+        }
+        if(arr4 != null)
+        {
+            System.out.println(arr4[0]);
+        }
+
+        byte b = 0b0111_0001;
+        System.out.println(b);
+
+        byte a1 = 5, b1 = 6;
+        byte c = (byte) (a1+b1);
+
+        // ---
     }
 
 }
