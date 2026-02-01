@@ -109,6 +109,8 @@ public class Main {
     static void function2()
     {
         // Глава 2
+        System.out.println("Глава 2:");
+
         int n = 1;
         boolean nn = true;
         if(n==1) System.out.println("\nTrue");
@@ -119,6 +121,8 @@ public class Main {
         // ---
 
         // Глава 3
+        System.out.println("Глава 3:");
+
         double dd = 1/2;
         System.out.println(dd);
 
@@ -153,11 +157,27 @@ public class Main {
         }
 
         byte b = 0b0111_0001;
-        System.out.println(b);
+        System.out.println(b+"\n");
 
         byte a1 = 5, b1 = 6;
         byte c = (byte) (a1+b1);
+        float f1 = 0.5f;
+        float f = f1 * 2.0f;
 
+        // ---
+        // Глава 4
+        System.out.println("Глава 4:");
+
+        byte b5 = -5;
+        for(int i = 7; i >= 0; i--)
+        {
+            int bit = b5 >> i & 1;
+            System.out.print(bit+" ");
+        }
+        System.out.println();
+
+        boolean b6 = true, b7 = false;
+        System.out.println((b6 & b7) + "\n");
         // ---
     }
 
