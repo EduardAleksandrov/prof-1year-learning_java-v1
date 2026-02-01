@@ -8,6 +8,9 @@ import org.example.threads.two.TwoTask;
 import org.example.threads.four.SumTask;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.lang.reflect.Member;
+import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.util.concurrent.ForkJoinPool;
 import java.util.Scanner;
@@ -27,7 +30,7 @@ public class Main {
         function1();
         RefTask.run();
 // 3 Book Schildt
-        function2();
+        book1();
     }
 
 // 1
@@ -106,7 +109,7 @@ public class Main {
     }
 // 3
     // Book Schildt
-    static void function2()
+    static void book1()
     {
         // Глава 2
         System.out.println("Глава 2:");
@@ -178,6 +181,29 @@ public class Main {
 
         boolean b6 = true, b7 = false;
         System.out.println((b6 & b7) + "\n");
+        // ---
+
+        // Глава 12
+        // Рефлексия
+        System.out.println("Глава 12:");
+
+        OneTask t = new OneTask();
+        try {
+            Class<?> cl = t.getClass();
+            Method getMethod = cl.getMethod("run");
+            getMethod.invoke(null);
+
+            Class<?> cll = OneTask.class;
+            Method[] m = cll.getDeclaredMethods();
+            for(Method mm: m)
+            {
+                String name = mm.getName();
+                System.out.println(name);
+            }
+        } catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         // ---
     }
 
