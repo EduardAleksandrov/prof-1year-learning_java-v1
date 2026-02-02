@@ -183,6 +183,15 @@ public class Main {
         System.out.println((b6 & b7) + "\n");
         // ---
 
+        // Глава 5
+        /*
+        * switch
+        * while, for без тела
+        * Несколько переменных в for
+        * */
+
+        // ---
+
         // Глава 12
         // Рефлексия
         System.out.println("Глава 12:");
