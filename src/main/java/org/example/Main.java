@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.classes.General;
 import org.example.classes.ref.RefTask;
+import org.example.start.Start1;
 import org.example.threads.one.OneTask;
 import org.example.threads.three.ThreeTask;
 import org.example.threads.two.TwoTask;
@@ -19,15 +20,15 @@ public class Main {
     static void main()
     {
 // 1 Threads
-        thread1();
-        thread2();
-        thread3();
-        thread4();
+//        thread1();
+//        thread2();
+//        thread3();
+//        thread4();
 // 2 Calculate general
-        function1();
-        RefTask.run();
+//        start();
+//        RefTask.run();
 // 3 Book Schildt
-        book1();
+        book();
     }
 
 // 1
@@ -60,53 +61,13 @@ public class Main {
         } catch(Exception e) { e.printStackTrace(); }
     }
 // 2
-    static void function1()
+    static void start()
     {
-        Integer @NotNull [] xx = {5};
-        calculate(xx);
-        IO.println(xx[0]);
-
-        General gn = new General("Hello");
-        IO.println(gn.str);
-        General.pr();
-        General.JSON();
-
-        BigDecimal decimal = new BigDecimal("123.22");
-
-        String s = "hi";
-        s = "try";
-        IO.println(s);
-
-        // Объявление и инициализация двумерного массива
-        int[][] array = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
-        // Вывод значений массива на экран
-        for(int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println(); // Переход на новую строку
-        }
-        for (int[] ints : array) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
-            }
-            System.out.println(); // Переход на новую строку
-        }
-    }
-    /**
-     * @param xx - массив
-     */
-    static void calculate(Integer @NotNull [] xx)
-    {
-        xx[0] = 6;
+        Start1.function1();
     }
 // 3
     // Book Schildt
-    static void book1()
+    static void book()
     {
         Book.book1();
     }

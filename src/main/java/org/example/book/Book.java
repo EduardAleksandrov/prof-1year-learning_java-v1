@@ -1,4 +1,5 @@
 // Book Schildt
+
 package org.example.book;
 
 import org.example.threads.one.OneTask;
@@ -7,15 +8,14 @@ import java.lang.reflect.Method;
 import java.util.Scanner;
 
 public class Book {
-    public static void book1()
-    {
+    public static void book1() {
         // Глава 2
         System.out.println("Глава 2:");
 
         int n = 1;
         boolean nn = true;
-        if(n==1) System.out.println("\nTrue");
-        if(nn) System.out.println("True\n");
+        if (n == 1) System.out.println("\nTrue");
+        if (nn) System.out.println("True\n");
 
         float ff = 0.95f;
         System.out.println(ff);
@@ -24,18 +24,16 @@ public class Book {
         // Глава 3
         System.out.println("Глава 3:");
 
-        double dd = 1/2;
+        double dd = 1 / 2;
         System.out.println(dd);
 
         int[] arr1 = new int[12];
         int[] arr2 = {0, 1, 2};
         n++;
         ++n;
-        var arr3 = new double[][] { {1.0, 2.0},{2.0, 3.0} };
-        for(int i = 0; i < 2; i++)
-        {
-            for(int j = 0; j < 2; j++)
-            {
+        var arr3 = new double[][]{{1.0, 2.0}, {2.0, 3.0}};
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
                 System.out.print(arr3[i][j] + " ");
             }
             System.out.println();
@@ -43,25 +41,24 @@ public class Book {
 
         int input;
         int[] arr4 = null;
-        try(Scanner scanner = new Scanner(System.in)) {// Создаем объект Scanner для считывания ввода
+        try (Scanner scanner = new Scanner(System.in)) {// Создаем объект Scanner для считывания ввода
             System.out.println("Введите число:"); // Просим пользователя ввести строку
             input = scanner.nextInt();
-            if(input < 1) throw new Throwable("Less zero");
+            if (input < 1) throw new Throwable("Less zero");
             System.out.println("Число " + input);
             arr4 = new int[input];
-        } catch(Throwable t) {
+        } catch (Throwable t) {
             System.out.println(t.getMessage());
         }
-        if(arr4 != null)
-        {
+        if (arr4 != null) {
             System.out.println(arr4[0]);
         }
 
         byte b = 0b0111_0001;
-        System.out.println(b+"\n");
+        System.out.println(b + "\n");
 
         byte a1 = 5, b1 = 6;
-        byte c = (byte) (a1+b1);
+        byte c = (byte) (a1 + b1);
         float f1 = 0.5f;
         float f = f1 * 2.0f;
 
@@ -70,10 +67,9 @@ public class Book {
         System.out.println("Глава 4:");
 
         byte b5 = -5;
-        for(int i = 7; i >= 0; i--)
-        {
+        for (int i = 7; i >= 0; i--) {
             int bit = b5 >> i & 1;
-            System.out.print(bit+" ");
+            System.out.print(bit + " ");
         }
         System.out.println();
 
@@ -89,10 +85,25 @@ public class Book {
          * */
         System.out.println("Глава 5:");
         int x = 1;
-        int y = ++x+1;
+        int y = ++x + 1;
         System.out.println(x);
+        System.out.println();
         // ---
 
+        // Глава 6
+        System.out.println("Глава 6:");
+
+        Calculator calc = new Calculator();
+        calc.sum("Sum: ", 2, 3, 5);
+        calc.check(2);
+
+        State st = new State();
+
+        System.out.println();
+        // ---
+    }
+
+    public static void book2() {
         // Глава 12
         // Рефлексия
         System.out.println("Глава 12:");
@@ -105,13 +116,11 @@ public class Book {
 
             Class<?> cll = OneTask.class;
             Method[] m = cll.getDeclaredMethods();
-            for(Method mm: m)
-            {
+            for (Method mm : m) {
                 String name = mm.getName();
                 System.out.println(name);
             }
-        } catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         // ---
