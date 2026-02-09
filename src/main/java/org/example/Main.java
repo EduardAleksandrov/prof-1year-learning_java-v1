@@ -69,7 +69,8 @@ public class Main {
     // Book Schildt
     static void book()
     {
-        Book.book1();
+//        Book.book1();
+        Book.book2();
     }
 
 }

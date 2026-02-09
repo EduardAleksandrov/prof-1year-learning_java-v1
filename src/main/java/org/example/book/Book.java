@@ -104,6 +104,11 @@ public class Book {
     }
 
     public static void book2() {
+        // Глава 7,8,9
+        System.out.println("Глава 7, 8, 9:");
+        OneInterface onei = new OneInterface();
+        onei.read("Hello ");
+
         // Глава 12
         // Рефлексия
         System.out.println("Глава 12:");
