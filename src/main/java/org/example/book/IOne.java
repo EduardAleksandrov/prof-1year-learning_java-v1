@@ -1,5 +1,8 @@
 package org.example.book;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 public interface IOne {
     void read(String s);
     int NO = 5;
@@ -7,7 +10,8 @@ public interface IOne {
     {
         return "IWrite " + priv();
     }
-    private String priv()
+    @Contract(pure = true)
+    private @NotNull String priv()
     {
         return "Private";
     }
