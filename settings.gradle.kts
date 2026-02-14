@@ -1,1 +1,1 @@
-rootProject.name = "learning_java_v1"
+rootProject.name = "prof-1year-learning_java-v1"
