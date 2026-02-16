@@ -109,6 +109,15 @@ public class Book {
         OneInterface onei = new OneInterface();
         onei.read("Hello ");
 
+        // Глава 10
+        System.out.println("\nГлава 10:");
+        try {
+            int num = 5/0;
+        } catch (ArithmeticException e)
+        {
+            System.out.println(e+"\n");
+        }
+
         // Глава 12
         // Рефлексия
         System.out.println("Глава 12:");
