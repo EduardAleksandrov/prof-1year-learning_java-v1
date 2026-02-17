@@ -1,17 +1,13 @@
 package org.example;
 
-import org.example.classes.General;
-import org.example.classes.ref.RefTask;
 import org.example.start.Start1;
+import org.example.threads.zero.*;
 import org.example.threads.one.OneTask;
 import org.example.threads.three.ThreeTask;
 import org.example.threads.two.TwoTask;
 import org.example.threads.four.SumTask;
 import org.example.book.Book;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.math.BigDecimal;
 import java.util.concurrent.ForkJoinPool;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -20,6 +16,7 @@ public class Main {
     static void main()
     {
 // 1 Threads
+    //  thread0();
 //        thread1();
 //        thread2();
 //        thread3();
@@ -28,10 +25,29 @@ public class Main {
 //        start();
 //        RefTask.run();
 // 3 Book Schildt
-        book();
+         book();
     }
 
 // 1
+    static void thread0()
+    {
+        Q q = new Q();
+        Producer P = new Producer(q);
+        Consumer C = new Consumer(q);
+        P.t.start();
+        C.t.start();
+        System.out.println("Stop ctrl + C");
+        try 
+        {
+            P.t.join();
+            C.t.join();
+        } catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        
+
+    }
     static void thread1()
     {
         OneTask.run();
