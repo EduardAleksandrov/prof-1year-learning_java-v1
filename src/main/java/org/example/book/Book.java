@@ -118,10 +118,15 @@ public class Book {
             System.out.println(e+"\n");
         }
 
+        
+
         // Глава 12
-        // Рефлексия
         System.out.println("Глава 12:");
 
+        Days dEnum = Days.FRIDAY;
+        if(dEnum == Days.FRIDAY) System.out.println(dEnum);
+
+        // Рефлексия
         OneTask t = new OneTask();
         try {
             Class<?> cl = t.getClass();
