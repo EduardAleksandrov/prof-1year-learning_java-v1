@@ -6,6 +6,7 @@ import org.example.threads.one.OneTask;
 
 import java.lang.reflect.Method;
 import java.util.Scanner;
+import java.lang.annotation.*;;
 
 public class Book {
     public static void book1() {
@@ -102,7 +103,7 @@ public class Book {
         System.out.println();
         // ---
     }
-
+    @MyAnno(get="Привет из аннотации")
     public static void book2() {
         // Глава 7,8,9
         System.out.println("Глава 7, 8, 9:");
@@ -118,13 +119,15 @@ public class Book {
             System.out.println(e+"\n");
         }
 
-        
-
         // Глава 12
         System.out.println("Глава 12:");
 
         Days dEnum = Days.FRIDAY;
         if(dEnum == Days.FRIDAY) System.out.println(dEnum);
+
+        Character ch = Character.valueOf('v');
+        Character ch2 = 'k';
+        System.out.println(ch.charValue()+ " " + ch2);
 
         // Рефлексия
         OneTask t = new OneTask();
@@ -135,6 +138,12 @@ public class Book {
 
             Class<?> cll = OneTask.class;
             Method[] m = cll.getDeclaredMethods();
+
+            Class<?> annot = Book.class;
+            Method getAnnotMethod = annot.getMethod("book2");
+            Annotation getAn = getAnnotMethod.getAnnotation(MyAnno.class);
+            System.out.println(getAn);
+
             for (Method mm : m) {
                 String name = mm.getName();
                 System.out.println(name);
@@ -143,5 +152,8 @@ public class Book {
             e.printStackTrace();
         }
         // ---
+    }
+    public static void book3() {
+        
     }
 }
