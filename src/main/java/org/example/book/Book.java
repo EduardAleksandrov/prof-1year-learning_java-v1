@@ -5,7 +5,14 @@ package org.example.book;
 import org.example.threads.one.OneTask;
 
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.lang.annotation.*;;
 
 public class Book {
@@ -154,6 +161,63 @@ public class Book {
         // ---
     }
     public static void book3() {
-        
+        // Глава 13
+        System.out.println("Глава 13");
+
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in, System.console().charset()));
+        char c = 'q';
+        System.out.print("Введите символы: ");
+        do {
+            try{
+                c = (char) bf.read();
+                System.out.write((int) c); // пишет байты, а не char(2 байта)
+            } catch (IOException e)
+            {
+                System.out.println(e);
+            }
+        } while (c != 'q');
+        System.out.flush(); // Forces the character to appear now from buffer
+
+        try (PrintWriter out = new PrintWriter(new FileWriter("temp/output.txt"))) {
+            for(int i = 0; i < 3; i++)
+            {
+                for(int j = 0; j < 3; j++)
+                {
+                    out.print(j+i+1 + " ");
+                }
+                out.print("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<ArrayList<Integer>>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("temp/output.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Split by one or more spaces
+                ArrayList<Integer> tmp = new ArrayList<Integer>();
+                String[] parts = line.trim().split(" ");
+                for (String part : parts) {
+                    if (!part.isEmpty()) {
+                        tmp.add(Integer.parseInt(part));
+                    }
+                }
+                arr.add(tmp);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.print("\n");
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                System.out.print(arr.get(i).get(j) + " ");
+            }
+            System.out.print("\n");
+        }
+
     }
 }
