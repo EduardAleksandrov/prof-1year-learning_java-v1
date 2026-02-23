@@ -218,6 +218,12 @@ public class Book {
             }
             System.out.print("\n");
         }
+        
+        // Глава 14
+        System.out.println("\nГлава 14");
 
+        Template<Double> t = new Template<Double>(5.06);
+        double res = t.calculate(t);
+        System.out.println(res);
     }
 }
