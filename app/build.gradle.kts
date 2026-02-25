@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("io.qameta.allure") version "3.0.1"
+    application
 }
 
 group = "org.example"
@@ -22,12 +23,19 @@ dependencies {
     implementation("io.qameta.allure:allure-junit5:2.29.1")
     implementation("io.qameta.allure:allure-java-commons:2.29.1")
     testRuntimeOnly("org.slf4j:slf4j-simple:2.0.17")
+
+    implementation(project(":module"))
 }
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = "org.example.Main"
 }
 
 tasks.jar {

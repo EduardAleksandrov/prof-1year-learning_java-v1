@@ -13,7 +13,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.lang.annotation.*;;
+import java.lang.annotation.*;
+
+import func.SimpleFunc;
 
 public class Book {
     public static void book1() {
@@ -225,5 +227,9 @@ public class Book {
         Template<Double> t = new Template<Double>(5.06);
         double res = t.calculate(t);
         System.out.println(res);
+
+        // Глава 16
+        System.out.println("\nГлава 16");
+        System.out.println(SimpleFunc.getGreeting());
     }
 }
