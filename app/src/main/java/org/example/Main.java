@@ -7,6 +7,7 @@ import org.example.threads.three.ThreeTask;
 import org.example.threads.two.TwoTask;
 import org.example.threads.four.SumTask;
 import org.example.book.Book;
+import org.example.classes.oop.*;
 
 import java.util.concurrent.ForkJoinPool;
 
@@ -86,8 +87,10 @@ public class Main {
     static void book()
     {
 //        Book.book1();
-        // Book.book2();
-        Book.book3();
+        //Book.book2();
+         Book.book3();
+
+
     }
 
 }

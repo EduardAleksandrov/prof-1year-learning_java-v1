@@ -2,6 +2,9 @@
 
 package org.example.book;
 
+import org.example.classes.oop.A;
+import org.example.classes.oop.B;
+import org.example.classes.oop.RelizeOOP;
 import org.example.threads.one.OneTask;
 
 import java.lang.reflect.Method;
@@ -118,6 +121,8 @@ public class Book {
         System.out.println("Глава 7, 8, 9:");
         OneInterface onei = new OneInterface();
         onei.read("Hello ");
+
+        RelizeOOP.realize();
 
         // Глава 10
         System.out.println("\nГлава 10:");
