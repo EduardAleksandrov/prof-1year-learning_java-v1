@@ -237,4 +237,15 @@ public class Book {
         System.out.println("\nГлава 16");
         System.out.println(SimpleFunc.getGreeting());
     }
+    public static void book4() {
+        // Глава 18
+        System.out.println("Chapter 18");
+        
+        String st = "hello".replace("he", "we");
+        StringBuffer sb = new StringBuffer(st);
+        sb.deleteCharAt(1);
+        String newSt = sb.toString();
+        System.out.println(newSt);
+    }
+
 }
