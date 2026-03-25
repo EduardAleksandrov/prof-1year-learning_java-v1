@@ -246,6 +246,12 @@ public class Book {
         sb.deleteCharAt(1);
         String newSt = sb.toString();
         System.out.println(newSt);
+
+        // Глава 19
+        System.out.println("\nChapter 19");
+        ProcessHandle currentProcess = ProcessHandle.current();
+        System.out.println(currentProcess.info() + "\t" + Runtime.version());
+        
     }
 
 }
