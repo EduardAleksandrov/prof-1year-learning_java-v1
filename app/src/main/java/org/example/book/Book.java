@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.annotation.*;
+import java.awt.*;
 
 import func.SimpleFunc;
 
@@ -253,5 +254,13 @@ public class Book {
         System.out.println(currentProcess.info() + "\t" + Runtime.version());
         
     }
+    public static void book5() {
+        // Глава 25
+        MouseEventDemo appwin = new MouseEventDemo();
+        appwin.setSize(new Dimension(700,700));
+        appwin.setTitle("MouseEventDemo");
+        appwin.setVisible(true);        
+    }
+
 
 }
