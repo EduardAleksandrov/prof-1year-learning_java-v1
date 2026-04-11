@@ -10,6 +10,7 @@ import org.example.threads.one.OneTask;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,6 +19,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.lang.annotation.*;
 import java.awt.*;
+
+import java.util.regex.*;
 
 import func.SimpleFunc;
 
@@ -261,6 +264,16 @@ public class Book {
         appwin.setTitle("MouseEventDemo");
         appwin.setVisible(true);        
     }
+    public static void book6() {
+        // Глава 31
+        String str = "Jon Jonathan Frank Ken Todd";
+        Pattern pat = Pattern.compile("Jon.*? ");
+        Matcher mat = pat.matcher(str);
+        str = mat.replaceAll("Eric ");
+        System.out.println(str);
+
+    }
+
 
 
 }
